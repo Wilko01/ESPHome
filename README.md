@@ -59,9 +59,11 @@ Only needed for the initial firmware installation.
 - Select the 'serial port' and the downloaded firmware
 - Click 'Flash ESP'
 - Some devices like the ESP32-CAM need to connect the pin 100 to GND and the reset button needs to be pressed before the flashing can proceed
+
 <img src="Images/Flasher_Reset.jpg" alt="drawing" width="400"/>
 
 When everything was successfull:
+
 <img src="Images/Flasher_finished.jpg" alt="drawing" width="400"/>
 
 - Once ready reboot the ESP
@@ -69,6 +71,7 @@ When everything was successfull:
 - Click the discovered device and submit it to add to Home Assistant
 
 ### Schematic overview to initially upload firmware to device that doesn't have an FTDI like the ESP32-CAM
+
 <img src="Images/ESP32_Cam_Connect_To_FTDI.jpg" alt="drawing" width="700"/>
 
 Connect the ESP32-Cam to the FTDI: Many FTDI programmers have a jumper that allows you to select 3.3V or 5V. Make sure the jumper is in the right place to select 5V. ESP32-CAM FTDI Programmer GND GND 5V VCC (5V) U0R TX U0T RX GPIO 0 GND Important: 
@@ -81,18 +84,7 @@ Connect the ESP32-Cam to the FTDI: Many FTDI programmers have a jumper that allo
 
 
 ### ESPHome Configuration
-Make the necessary changes to the configuration of the ESP32-CAM camera: [ESP32CAM configurations](https://esphome.io/components/esp32_camera.html)
-
-
-![ESPEasy Config](Images/ESPEasy_Config.jpg)
-
-![ESPEasy Controller](Images/ESPEasy_Controller.jpg)
-
-![ESPEasy Devices](Images/ESPEasy_Devices.jpg)
-
-Pay attention to the Pullup and inverse as there were issues even with the external pulldown resistor.
-Additionally when using relais make sure to set a debounce value to make sure that the contacts of the relais don't mess with the state.
-![ESPEasy Devices ESPEasy_Switch](Images/ESPEasy_on_off.jpg)
+Make the necessary changes to the configuration of the ESP32-CAM camera: [ESP32CAM configurations](https://esphome.io/components/esp32_camera.html) and place them into the YAML file. Upload to the device once the configuration is ready.
 
 ### Interface
 #### Home Assistant
@@ -121,9 +113,7 @@ Generic
 
 
 ### Code
-#### Rules Set 1 without annotation
-
-#### Rules Set 1 including annotation
+..
 ```
 ..
 ```
