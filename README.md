@@ -81,7 +81,7 @@ Connect the ESP32-Cam to the FTDI: Many FTDI programmers have a jumper that allo
 
 
 ### ESPHome Configuration
-- [ESP32CAM configurations](https://esphome.io/components/esp32_camera.html)
+Make the necessary changes to the configuration of the ESP32-CAM camera: [ESP32CAM configurations](https://esphome.io/components/esp32_camera.html)
 
 
 ![ESPEasy Config](Images/ESPEasy_Config.jpg)
@@ -96,10 +96,11 @@ Additionally when using relais make sure to set a debounce value to make sure th
 
 ### Interface
 #### Home Assistant
-Home Assistant is connected via the MQTT broker.
+The devices will automatically added via the discovery process of the integration into Home Assistant.
 
 ### Testing
-.
+Add the device to the dashboard and check the results.
+The ESP32-CAM will capture images, but with a slow framerate. This is to reduce the power consumption of the ESP32-CAM when not in use. By clicking on the camera image the framerate increases and the power consumption with it.
 
 ### Information
 - [ESP32-WROOM-32x](https://esphome.io/devices/nodemcu_esp32.html)
