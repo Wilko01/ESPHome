@@ -28,11 +28,46 @@ wifi_password: "....xxxxx.."
 - Save the file
 It is time to add devices
 - Click the '+'
-- Add name and wifi settings
-Pick a specific board and use this table to select the correct board:
+- Add name and wifi settings (the settings will be overwritten once the device is created, so it doesn't matter what to fill in for wifi)
+- Next
+- Select 'Pick specific board' and use this table to select the correct board:
 ESP32-WROOM-32x     DOIT ESP32 DEVKIT V1
 ESP32-cam           AI Thinker ESP32-CAM
+- Next
+- Click 'Edit'once the device is made
+- Replace the wifi section by:
+```
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+```
+- Save
 
+### Initial firmware installation onto the device
+New devices don't have OTA (Over The Air) installed so the first time this is manually.
+- In the overview with all ESPHome devices select the device and hit 'Edit'
+- Click 'Install'
+- Click 'Manual download'. The firmware will be created.
+- Once ready, download the firmware.
+
+#### Flasher
+Only needed for the initial firmware installation. 
+- Download the firmware flasher at https://github.com/esphome/esphome-flasher/releases.
+- For ESP32 devices that doesn't require a FTDI, the ESP can be connected to the computer and the flasher may be run. For devices that need an FTDI see the next paragraph for connecting the ESP to the FTDI and the computer.
+- Select the 'serial port' and the downloaded firmware
+- Click 'Flash ESP'
+- Once ready reboot the ESP
+- After the ESP is booted it should become visible in Home Assistant in ESPHome
+
+
+
+
+### Schematic overview to initially upload firmware to device that doesn't have an FTDI like the ESP32-CAM
+<img src="Images/ESP32_Cam_Connect_To_FTDI.jpg" alt="drawing" width="500"/>
+
+Connect the ESP32-Cam to the FTDI: Many FTDI programmers have a jumper that allows you to select 3.3V or 5V. Make sure the jumper is in the right place to select 5V. ESP32-CAM FTDI Programmer GND GND 5V VCC (5V) U0R TX U0T RX GPIO 0 GND Important: 
+- GPIO 0 needs to be connected to GND so that you’re able to upload code. 
+- Make sure to connect an external power supply to the 5V otherwise there are errors when flashing or the flashing will not work at all. 
 
 
 
@@ -56,14 +91,7 @@ Relay socket pinout
 1 x 10k resistor as pull down resistor
 
 
-### Schematic overview
-<img src="Images/Schematic_overview.jpg" alt="drawing" width="500"/>
- 
-•	Connect the 230V side of the relay according to the installation instructions of the boilerNodeMCU with. See the relay socker pinout below on how to connect.
 
-•	Connect the relay contact to the 3,3V of the NodeMCU and the other side to D6.
-
-•	Connect the 10k resistor to D6 and to GND to use it as a pull down resistor.
 
 ### ESPEasy installation
 See the instructions in 'Arduino projects and programming' (not listed here)
@@ -90,7 +118,7 @@ Home Assistant is connected via the MQTT broker.
 .
 
 ### Information
-- [Rules syntax](https://espeasy.readthedocs.io/en/latest/Rules/Rules.html)
+- [ESP32-WROOM-32x](https://esphome.io/devices/nodemcu_esp32.html)
 
 Generic
 - [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
