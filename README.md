@@ -15,17 +15,19 @@ ESPHome supports many devices and easily integrates them into Home Assistant by 
 - Find the ESPHome icon in the sidebar
 - There are not devices yet 
 
-## Technical description adding devices via ESPHome
+## Technical description initial config of ESPHome
 - Open Home Assistant
 - Find the ESPHome icon in the sidebar
 Before adding devices it is best practice to set the credentials of Wifi first in the secrets document.
 - Click on 'secrets'
 - Add the credentials of wifi
 ```
-wifi_ssid: "BerlioZ24"
+wifi_ssid: "..xx.."
 wifi_password: "....xxxxx.."
 ```
 - Save the file
+
+## Technical description adding devices via ESPHome
 It is time to add devices
 - Click the '+'
 - Add name and wifi settings (the settings will be overwritten once the device is created, so it doesn't matter what to fill in for wifi)
@@ -53,52 +55,34 @@ New devices don't have OTA (Over The Air) installed so the first time this is ma
 #### Flasher
 Only needed for the initial firmware installation. 
 - Download the firmware flasher at https://github.com/esphome/esphome-flasher/releases.
-- For ESP32 devices that doesn't require a FTDI, the ESP can be connected to the computer and the flasher may be run. For devices that need an FTDI see the next paragraph for connecting the ESP to the FTDI and the computer.
+- For ESP32 devices that doesn't require a FTDI, the ESP can be connected to the computer and the flasher may be run. For devices that need an FTDI see the next paragraph for connecting the ESP to the FTDI and the computer. Once connected, continue here
 - Select the 'serial port' and the downloaded firmware
 - Click 'Flash ESP'
+- Some devices like the ESP32-CAM need to connect the pin 100 to GND and the reset button needs to be pressed before the flashing can proceed
+<img src="Images/Flasher_Reset.jpg" alt="drawing" width="400"/>
+
+When everything was successfull:
+<img src="Images/Flasher_finished.jpg" alt="drawing" width="400"/>
+
 - Once ready reboot the ESP
-- After the ESP is booted it should become visible in Home Assistant in ESPHome
-
-
-
+- After the ESP is booted it should become online in Home Assistant in ESPHome and as newly discovered device under 'Integrations'.
+- Click the discovered device and submit it to add to Home Assistant
 
 ### Schematic overview to initially upload firmware to device that doesn't have an FTDI like the ESP32-CAM
-<img src="Images/ESP32_Cam_Connect_To_FTDI.jpg" alt="drawing" width="500"/>
+<img src="Images/ESP32_Cam_Connect_To_FTDI.jpg" alt="drawing" width="700"/>
 
 Connect the ESP32-Cam to the FTDI: Many FTDI programmers have a jumper that allows you to select 3.3V or 5V. Make sure the jumper is in the right place to select 5V. ESP32-CAM FTDI Programmer GND GND 5V VCC (5V) U0R TX U0T RX GPIO 0 GND Important: 
 - GPIO 0 needs to be connected to GND so that you’re able to upload code. 
 - Make sure to connect an external power supply to the 5V otherwise there are errors when flashing or the flashing will not work at all. 
 
+### Firmware updates of ESPHome devices
+- In Home Assistant go into the tab HomeESP
+- Make the needed changes and upload over the air
 
 
-### Parts
-1 x NodeMCU
+### ESPHome Configuration
+- [ESP32CAM configurations](https://esphome.io/components/esp32_camera.html)
 
-<img src="Images/ESP8266_NodeMCU.jpg" alt="drawing" width="500"/>
-
-1 x Relay LY2N-J
-
-<img src="Images/LY2N-J_Relay.jpg" alt="drawing" width="150"/>
-
-1 x Relay socket PTF08A
-
-<img src="Images/PTF08A_Socket.jpg" alt="drawing" width="200"/>
-
-Relay socket pinout
-
-<img src="Images/Relay_PTF08A_Socket_pinout.jpg" alt="drawing" width="200"/>
-
-1 x 10k resistor as pull down resistor
-
-
-
-
-### ESPEasy installation
-See the instructions in 'Arduino projects and programming' (not listed here)
-
-
-### ESPEasy Configuration
-Check the screenshots for the configuration.
 
 ![ESPEasy Config](Images/ESPEasy_Config.jpg)
 
@@ -119,6 +103,10 @@ Home Assistant is connected via the MQTT broker.
 
 ### Information
 - [ESP32-WROOM-32x](https://esphome.io/devices/nodemcu_esp32.html)
+- [ESPHome GPIO Binary Sensor](https://esphome.io/components/binary_sensor/gpio.html)
+- [ESPHome Binary Sensor Component](https://esphome.io/components/binary_sensor/index.html#config-binary-sensor)
+- [ESPHome Configuration Types](https://esphome.io/guides/configuration-types.html#config-pin-schema)
+- [Boards & dec-kits](https://platformio.org/boards?count=1000&filter%5Bplatform%5D=espressif32)
 
 Generic
 - [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
