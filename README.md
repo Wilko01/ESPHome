@@ -113,7 +113,7 @@ The ESP32-CAM will capture images, but with a slow framerate. This is to reduce 
 - [Display a value from Home Assistant on the SSD1306](/Examples/SSD1306_i2C_display_Value_Entity_HA)
 - [Display lines or circles on the SSD1306](/Examples/SSD1306_i2C_display_Line)
 - [Display a graph on the SSD1306](/Examples/SSD1306_i2C_display_Graph)
-- [Display on when a button is pressed](SSD1306_i2C_display_On_Off)
+- [Display on when a button is pressed](/Examples/SSD1306_i2C_display_On_Off)
 
 ### Information
 - [ESP32-WROOM-32x](https://esphome.io/devices/nodemcu_esp32.html)
