@@ -33,8 +33,10 @@ It is time to add devices
 - Add name and wifi settings (the settings will be overwritten once the device is created, so it doesn't matter what to fill in for wifi)
 - Next
 - Select 'Pick specific board' and use this table to select the correct board:
-ESP32-WROOM-32x     DOIT ESP32 DEVKIT V1
-ESP32-cam           AI Thinker ESP32-CAM
+| Board           | Select               |
+|-----------------|----------------------|
+| ESP32-WROOM-32x | DOIT ESP32 DEVKIT V1 |
+| ESP32-cam       | AI Thinker ESP32-CAM |
 - Next
 - Click 'Edit'once the device is made
 - Replace the wifi section by:
