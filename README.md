@@ -101,7 +101,7 @@ The devices will automatically be added via the discovery process of the integra
 There are two options:
 - Via the DHCP server in Ubiquity
 - Via the settings of the device in ESPHome
-Ubiquity is chosen to configure the fixed IP as the naming then can be adjusted to a more logical one. Ubiquity provides one central location to set fixed IP addresses.
+Ubiquity is chosen to configure the fixed IP as the naming then can be adjusted to a more logical one. Ubiquity provides one central location to set fixed IP addresses and captures the MAC address for administration in the IP plan.
 
 ### Testing
 Add the device to the dashboard and check the results.
