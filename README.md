@@ -101,16 +101,7 @@ The devices will automatically be added via the discovery process of the integra
 There are two options:
 - Via the DHCP server in Ubiquity
 - Via the settings of the device in ESPHome
-As the complete config is in ESPHome, the IP address is also placed in ESPHome.
-Add under the Wifi block the fixed IP settings
-# Optional manual IP
-  manual_ip:
-    static_ip: 192.168.201.xxxxx
-    gateway: 192.168.201.1
-    subnet: 255.255.255.0
-    dns1: 192.168.201.1
-    dns2: 8.8.8.8
-
+Ubiquity is chosen to configure the fixed IP as the naming then can be adjusted to a more logical one. Ubiquity provides one central location to set fixed IP addresses.
 
 ### Testing
 Add the device to the dashboard and check the results.
