@@ -12,8 +12,22 @@ i2c:
 font:
   - file: 'slkscr.ttf' #this font file needs to be uploaded to the Home Assistant folder /config/esphome
     id: font1
-    size: 16
+    size: 8
+    
+  - file: 'BebasNeue-Regular.ttf'
+    id: font2
+    size: 48
+    
+  - file: 'arial.ttf'
+    id: font3
+    size: 14
 
+#Aquire the hte value from the entity in Home Assistant
+sensor:
+  - platform: homeassistant
+    id: TH10
+    entity_id: sensor.temperature_158d0005782421
+    internal: true
 
 display:
   - platform: ssd1306_i2c
@@ -23,6 +37,10 @@ display:
     contrast: 60%
 #Make sure taht there is no comment after the following line with 'lambda' as it will lead to errors
     lambda: |-
-      it.printf(64, 31, id(font1), TextAlign::TOP_CENTER, "Test");
-#Print the text at column 64 and row 31
+      it.printf(0, 0, id(font1), "TH10 kleine kamer");
+      if (id(TH10).has_state()) {
+        it.printf(127, 23, id(font3), TextAlign::TOP_RIGHT , "%.1f°", id(TH10).state);
+      }
+#Print the value of the temperature sensor which is gained from Home Assistant
+#Print the text at column 0 and row 60
 #end code
