@@ -26,8 +26,6 @@ wifi_ssid: "..xx.."
 wifi_password: "....xxxxx.."
 ```
 
-Place the specific code under "captive_portal:"
-
 - Save the file
 
 ## Technical description adding devices via ESPHome
@@ -50,6 +48,8 @@ wifi:
   ssid: !secret wifi_ssid
   password: !secret wifi_password
 ```
+
+Place the specific code under "captive_portal:"
 - Save
 
 ### Initial firmware installation onto the device
@@ -60,9 +60,9 @@ New devices don't have OTA (Over The Air) installed so the first time this is ma
 - Once ready, download the firmware.
 
 #### Flasher
-Only needed for the initial firmware installation. 
+Only needed for the initial firmware installation. Once ready the OTA can be used. 
 - Download the firmware flasher at https://github.com/esphome/esphome-flasher/releases.
-- For ESP32 devices that doesn't require a FTDI, the ESP can be connected to the computer and the flasher may be run. For devices that need an FTDI see the next paragraph for connecting the ESP to the FTDI and the computer. Once connected, continue here
+- For ESP32 devices that doesn't require a FTDI, the ESP can be connected to the computer and the flasher may be run. For devices that need an FTDI see the next paragraph for connecting the ESP to the FTDI and the computer. Once connected, continue here.
 - Select the 'serial port' and the downloaded firmware
 - Click 'Flash ESP'
 - Some devices like the ESP32-CAM need to connect the pin 100 to GND and the reset button needs to be pressed before the flashing can proceed
@@ -95,7 +95,22 @@ Make the necessary changes to the configuration of the ESP32-CAM camera: [ESP32C
 
 ### Interface
 #### Home Assistant
-The devices will automatically added via the discovery process of the integration into Home Assistant.
+The devices will automatically be added via the discovery process of the integration into Home Assistant. The Notification icon in Home Assistant will indicate that there is a new device discovered. Click it and complete the process. The device is no available in Home Assistant.
+
+### Fixed IP address
+There are two options:
+- Via the DHCP server in Ubiquity
+- Via the settings of the device in ESPHome
+As the complete config is in ESPHome, the IP address is also placed in ESPHome.
+Add under the Wifi block the fixed IP settings
+# Optional manual IP
+  manual_ip:
+    static_ip: 192.168.201.xxxxx
+    gateway: 192.168.201.1
+    subnet: 255.255.255.0
+    dns1: 192.168.201.1
+    dns2: 8.8.8.8
+
 
 ### Testing
 Add the device to the dashboard and check the results.
