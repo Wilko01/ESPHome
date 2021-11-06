@@ -26,7 +26,7 @@ wifi_ssid: "..xx.."
 wifi_password: "....xxxxx.."
 ```
 
-Place the specific code under ```captive_portal:```
+Place the specific code under "captive_portal:"
 
 - Save the file
 
