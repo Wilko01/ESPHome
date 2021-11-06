@@ -25,6 +25,9 @@ Before adding devices it is best practice to set the credentials of Wifi first i
 wifi_ssid: "..xx.."
 wifi_password: "....xxxxx.."
 ```
+
+Place the specific code under ```captive_portal:```
+
 - Save the file
 
 ## Technical description adding devices via ESPHome
