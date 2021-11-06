@@ -1,0 +1,21 @@
+#specify the connection to the SSD1306
+#Connect to the GND and 3,3 but better to 5V
+i2c:
+  sda: 16
+  scl: 17
+  scan: true #Will display the i2C address
+
+font:
+  - file: 'slkscr.ttf' #this font file needs to be uploaded to the Home Assistant folder /config/esphome
+    id: font1
+    size: 16
+
+
+display:
+  - platform: ssd1306_i2c
+    model: "SSD1306 128x64"
+    reset_pin: 0
+    address: 0x3C
+    contrast: 60%
+    lambda: |-
+      it.printf(64, 31, id(font1), TextAlign::TOP_CENTER, "Test");

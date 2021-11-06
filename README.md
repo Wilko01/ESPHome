@@ -107,6 +107,11 @@ Ubiquity is chosen to configure the fixed IP as the naming then can be adjusted 
 Add the device to the dashboard and check the results.
 The ESP32-CAM will capture images, but with a slow framerate. This is to reduce the power consumption of the ESP32-CAM when not in use. By clicking on the camera image the framerate increases and the power consumption with it.
 
+## Examples
+[Display text on the SSD1306](/Examples/SSD1306_i2C_display_text)
+
+
+
 ### Information
 - [ESP32-WROOM-32x](https://esphome.io/devices/nodemcu_esp32.html)
 - [ESPHome GPIO Binary Sensor](https://esphome.io/components/binary_sensor/gpio.html)
