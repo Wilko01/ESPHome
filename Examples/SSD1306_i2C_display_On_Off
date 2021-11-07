@@ -19,8 +19,8 @@ esphome:
 #specify the connection to the SSD1306
 #Connect to the GND and 3,3 but better to 5V
 i2c:
-  sda: 16
-  scl: 17
+  sda: 18
+  scl: 19
   scan: true #Will display the i2C address
 
 font:
@@ -33,7 +33,7 @@ binary_sensor: # connect the pin to GND to active the code
     name: "Button"
     internal: true
     pin:
-      number: 18
+      number: 27
       mode: INPUT_PULLUP
     on_release:
       - lambda: id(display01).turn_on();
