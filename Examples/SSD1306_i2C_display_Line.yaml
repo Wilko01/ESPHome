@@ -1,5 +1,5 @@
 Example configuration that was tested by me with an ESP32 and a SSD1306. Copy and paste the code below under all other code in the code field of the ESPHome device.
-
+Lines, circles, etc: [More info](https://esphome.io/components/display/index.html)
 
 #start code
 #specify the connection to the SSD1306
@@ -10,14 +10,9 @@ i2c:
   scan: true #Will display the i2C address
 
 font:
-  - file: 'slkscr.ttf' #this font file needs to be uploaded to the Home Assistant folder /config/esphome
+  - file: 'arial.ttf' #this font file needs to be uploaded to the Home Assistant folder /config/esphome
     id: font1
-    size: 16
-
-#Aquire the time from Home Assistant
-time:
-  - platform: homeassistant
-    id: esptime
+    size: 8
 
 display:
   - platform: ssd1306_i2c
@@ -25,9 +20,8 @@ display:
     reset_pin: 0
     address: 0x3C
     contrast: 60%
-#Make sure taht there is no comment after the following line with 'lambda' as it will lead to errors
     lambda: |-
-      it.strftime(0, 60, id(font1), TextAlign::BASELINE_LEFT, "%H:%M", id(esptime).now());
-#Print time in HH:MM format
+      it.line(0, 0, 100, 50);
+#Print the value of the temperature sensor which is gained from Home Assistant
 #Print the text at column 0 and row 60
 #end code

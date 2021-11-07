@@ -24,7 +24,7 @@ i2c:
   scan: true #Will display the i2C address
 
 font:
-  - file: 'slkscr.ttf' #this font file needs to be uploaded to the Home Assistant folder /config/esphome
+  - file: 'arial.ttf' #this font file needs to be uploaded to the Home Assistant folder /config/esphome
     id: font1
     size: 16
 
