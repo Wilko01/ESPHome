@@ -1,5 +1,19 @@
 Example configuration that was tested by me with an ESP32 and a SSD1306. Copy and paste the code below under all other code in the code field of the ESPHome device.
-!!!!Remark: Is working but after the boot the display remains on till the button is pressed.
+
+
+#First code block which needs to be at the start of the code as it is related
+#  to the boot process. Copy and past only the on_boot part and not the esphome
+#  name, platform and board
+esphome:
+  name: esp18
+  platform: ESP32
+  board: esp32doit-devkit-v1
+  on_boot:
+    priority: -100 #lowest priority so start last
+    then:
+      - lambda: id(display01).turn_off();
+#End first code block
+
 
 #start code
 #specify the connection to the SSD1306
@@ -14,18 +28,17 @@ font:
     id: font1
     size: 16
 
-binary_sensor:
+binary_sensor: # connect the pin to GND to active the code
   - platform: gpio
     name: "Button"
     internal: true
     pin:
       number: 18
       mode: INPUT_PULLUP
-    on_press:
+    on_release:
       - lambda: id(display01).turn_on();
       - delay: 10s
       - lambda: id(display01).turn_off();
-
 
 display:
   - platform: ssd1306_i2c
@@ -34,11 +47,10 @@ display:
     reset_pin: 0
     address: 0x3C
     contrast: 60%
-#Make sure taht there is no comment after the following line with 'lambda' as it will lead to errors
+#Make sure that any comment in the lambda code block is started with // as all
+#  code in the block is C++.
     lambda: |-
+      //Annotation in the C++ code block
       it.printf(64, 31, id(font1), TextAlign::TOP_CENTER, "Test");
 #Print the text at column 64 and row 31
 #end code
-
-
-
