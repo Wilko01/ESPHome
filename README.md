@@ -120,6 +120,7 @@ The ESP32-CAM will capture images, but with a slow framerate. This is to reduce 
 - [ESPHome GPIO Binary Sensor](https://esphome.io/components/binary_sensor/gpio.html)
 - [ESPHome Binary Sensor Component](https://esphome.io/components/binary_sensor/index.html#config-binary-sensor)
 - [ESPHome Configuration Types](https://esphome.io/guides/configuration-types.html#config-pin-schema)
+- [ESPHome syntax for writing text in the yaml file to be printed on a LCD](https://esphome.io/components/display/index.html#display-printf)
 - [ESP32 Pinout reference](https://randomnerdtutorials.com/esp32-pinout-reference-gpios)
 - [ESP32-WROOM-32x](https://esphome.io/devices/nodemcu_esp32.html)
 - [Boards & dev-kits](https://platformio.org/boards?count=1000&filter%5Bplatform%5D=espressif32)
