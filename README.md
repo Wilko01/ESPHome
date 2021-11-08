@@ -108,12 +108,12 @@ Add the device to the dashboard and check the results.
 The ESP32-CAM will capture images, but with a slow framerate. This is to reduce the power consumption of the ESP32-CAM when not in use. By clicking on the camera image the framerate increases and the power consumption with it.
 
 ## Examples
-- [Display text on the SSD1306](/Examples/SSD1306_i2C_display_text)
-- [Display time on the SSD1306](/Examples/SSD1306_i2C_display_time)
-- [Display a value from Home Assistant on the SSD1306](/Examples/SSD1306_i2C_display_Value_Entity_HA)
-- [Display lines or circles on the SSD1306](/Examples/SSD1306_i2C_display_Line)
-- [Display a graph on the SSD1306](/Examples/SSD1306_i2C_display_Graph)
-- [Display on when a button is pressed](/Examples/SSD1306_i2C_display_On_Off)
+- [Display text on the SSD1306](/Examples/SSD1306_i2C_display_text.yaml)
+- [Display time on the SSD1306](/Examples/SSD1306_i2C_display_time.yaml)
+- [Display a value from Home Assistant on the SSD1306](/Examples/SSD1306_i2C_display_Value_Entity_HA.yaml)
+- [Display lines or circles on the SSD1306](/Examples/SSD1306_i2C_display_Line.yaml)
+- [Display a graph on the SSD1306](/Examples/SSD1306_i2C_display_Graph.yaml)
+- [Display on when a button is pressed](/Examples/SSD1306_i2C_display_On_Off.yaml)
 
 ### Information
 - [ESPHome Automations and Templates](https://esphome.io/guides/automations.html)
