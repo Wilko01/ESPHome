@@ -35,10 +35,11 @@ It is time to add devices
 - Next
 - Select 'Pick specific board' and use this table to select the correct board:
 
-| Board           | Select               |
-|-----------------|----------------------|
-| ESP32-WROOM-32x | DOIT ESP32 DEVKIT V1 |
-| ESP32-cam       | AI Thinker ESP32-CAM |
+| Board                | Select               |
+|----------------------|----------------------|
+| ESP32-WROOM-32x      | DOIT ESP32 DEVKIT V1 |
+| ESP32-cam            | AI Thinker ESP32-CAM |
+| NodeMCU V3 (ESP8266) | NodeMCUv2
 
 - Next
 - Click 'Edit'once the device is made
