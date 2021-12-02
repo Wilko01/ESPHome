@@ -109,22 +109,26 @@ Add the device to the dashboard and check the results.
 The ESP32-CAM will capture images, but with a slow framerate. This is to reduce the power consumption of the ESP32-CAM when not in use. By clicking on the camera image the framerate increases and the power consumption with it.
 
 ## Examples
-- [Display text on the SSD1306](/Examples/SSD1306_i2C_display_text.yaml)
-- [Display time on the SSD1306](/Examples/SSD1306_i2C_display_time.yaml)
-- [Display a value from Home Assistant on the SSD1306](/Examples/SSD1306_i2C_display_Value_Entity_HA.yaml)
-- [Display lines or circles on the SSD1306](/Examples/SSD1306_i2C_display_Line.yaml)
-- [Display a graph on the SSD1306](/Examples/SSD1306_i2C_display_Graph.yaml)
-- [Display on when a button is pressed](/Examples/SSD1306_i2C_display_On_Off.yaml)
+- [Turn a led on with the ESP32](/ESP32_GPIO_LED_and_Switch.vbs)
+- [Display text on the SSD1306](/Examples/SSD1306_i2C_display_text.vbs)
+- [Display time on the SSD1306](/Examples/SSD1306_i2C_display_time.vbs)
+- [Display a value from Home Assistant on the SSD1306](/Examples/SSD1306_i2C_display_Value_Entity_HA.vbs)
+- [Display lines or circles on the SSD1306](/Examples/SSD1306_i2C_display_Line.vbs)
+- [Display a graph on the SSD1306](/Examples/SSD1306_i2C_display_Graph.vbs)
+- [Display on when a button is pressed](/Examples/SSD1306_i2C_display_On_Off.vbs)
 
 ### Information
 - [ESPHome Automations and Templates](https://esphome.io/guides/automations.html)
 - [ESPHome GPIO Binary Sensor](https://esphome.io/components/binary_sensor/gpio.html)
 - [ESPHome Binary Sensor Component](https://esphome.io/components/binary_sensor/index.html#config-binary-sensor)
+- [Switch](hhttps://esphome.io/components/switch/gpio.html)
 - [ESPHome Configuration Types](https://esphome.io/guides/configuration-types.html#config-pin-schema)
 - [ESPHome syntax for writing text in the yaml file to be printed on a LCD](https://esphome.io/components/display/index.html#display-printf)
 - [ESP32 Pinout reference](https://randomnerdtutorials.com/esp32-pinout-reference-gpios)
 - [ESP32-WROOM-32x](https://esphome.io/devices/nodemcu_esp32.html)
 - [Boards & dev-kits](https://platformio.org/boards?count=1000&filter%5Bplatform%5D=espressif32)
+
+
 
 Generic
 - [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
