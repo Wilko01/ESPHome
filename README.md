@@ -109,7 +109,7 @@ Add the device to the dashboard and check the results.
 The ESP32-CAM will capture images, but with a slow framerate. This is to reduce the power consumption of the ESP32-CAM when not in use. By clicking on the camera image the framerate increases and the power consumption with it.
 
 ## Examples
-- [Turn a led on with the ESP32](/ESP32_GPIO_LED_and_Switch.vbs)
+- [Turn a led on with the ESP32](/Examples/ESP32_GPIO_LED_and_Switch.vbs)
 - [Display text on the SSD1306](/Examples/SSD1306_i2C_display_text.vbs)
 - [Display time on the SSD1306](/Examples/SSD1306_i2C_display_time.vbs)
 - [Display a value from Home Assistant on the SSD1306](/Examples/SSD1306_i2C_display_Value_Entity_HA.vbs)
