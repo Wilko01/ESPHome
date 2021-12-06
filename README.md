@@ -3,6 +3,7 @@ ESPHome is an addon to Home Assistant which enables low code home automation.
 
 ## Description and operation instructions
 ESPHome supports many devices and easily integrates them into Home Assistant by specifying them via YAML. ESPHome has several methods for deploying the code to the different boards. To my experience this is way easier then via ESP easy flashers, ArduinoIO or PlatformIO. Detailed info can be found https://esphome.io/.
+Another benefit of using ESPHome is that the configured device can run stand-alone. Obviously there are no defined dependencies. This makes it easy to configure everything in ESPHome and use it standalone if required. In my case I want some devices to be independent of Home Assistant, apparantly this is supported.
 
 
  ## Technical description installing the Addon into Home Assistant
