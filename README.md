@@ -5,6 +5,9 @@ ESPHome is an addon to Home Assistant which enables low code home automation.
 ESPHome supports many devices and easily integrates them into Home Assistant by specifying them via YAML. ESPHome has several methods for deploying the code to the different boards. To my experience this is way easier then via ESP easy flashers, ArduinoIO or PlatformIO. Detailed info can be found https://esphome.io/.
 Another benefit of using ESPHome is that the configured device can run stand-alone. Obviously there are no defined dependencies. This makes it easy to configure everything in ESPHome and use it standalone if required. In my case I want some devices to be independent of Home Assistant, apparantly this is supported.
 
+### Special attention for the working when there is no network connection to the MQTT server!
+	There is one caveat though: ESPHome devices automatically reboots if no connection to the MQTT broker can be made. This is because the ESPs typically have issues in their network stacks that require a reboot to fix. You can adjust this behavior (or even disable automatic rebooting) using the reboot_timeout option in the wifi component and mqtt component. (Beware that effectively disables the reboot watchdog, so you will need to power cycle the device if it fails to connect to the network without a reboot)
+  [Reboot when there is no connection to MQTT](https://esphome.io/guides/automations.html#config-lambda)
 
  ## Technical description installing the Addon into Home Assistant
 - Open Home Assistant
@@ -91,7 +94,6 @@ Connect the ESP32-Cam to the FTDI: Many FTDI programmers have a jumper that allo
 - In Home Assistant go into the tab HomeESP
 - Make the needed changes and upload over the air
 
-
 ### ESPHome Configuration
 Make the necessary changes to the configuration of the ESP32-CAM camera: [ESP32CAM configurations](https://esphome.io/components/esp32_camera.html) and place them into the YAML file. Upload to the device once the configuration is ready.
 
@@ -117,6 +119,7 @@ The ESP32-CAM will capture images, but with a slow framerate. This is to reduce 
 - [Display lines or circles on the SSD1306](/Examples/SSD1306_i2C_display_Line.vbs)
 - [Display a graph on the SSD1306](/Examples/SSD1306_i2C_display_Graph.vbs)
 - [Display on when a button is pressed](/Examples/SSD1306_i2C_display_On_Off.vbs)
+- [Display time on the TM1637 7-Segment display](/Examples/TM1637_7_Segment_Display_Time.vbs)
 
 ### Information
 - [ESPHome Automations and Templates](https://esphome.io/guides/automations.html)
@@ -127,6 +130,7 @@ The ESP32-CAM will capture images, but with a slow framerate. This is to reduce 
 - [ESPHome syntax for writing text in the yaml file to be printed on a LCD](https://esphome.io/components/display/index.html#display-printf)
 - [ESP32 Pinout reference](https://randomnerdtutorials.com/esp32-pinout-reference-gpios)
 - [ESP32-WROOM-32x](https://esphome.io/devices/nodemcu_esp32.html)
+- [TM1637 7 Segment display](https://esphome.io/components/display/tm1637.html)
 - [Boards & dev-kits](https://platformio.org/boards?count=1000&filter%5Bplatform%5D=espressif32)
 
 

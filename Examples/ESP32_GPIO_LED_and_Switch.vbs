@@ -13,7 +13,7 @@ switch:
       number: GPIO15
       inverted: false
     id: LED01
-    name: led01 #by providing a name the led will become visible in Home Assistant
+    name: led01 #by providing a name the Relay01 will become visible in Home Assistant under the name as described by name
 
 binary_sensor:
   - platform: gpio
